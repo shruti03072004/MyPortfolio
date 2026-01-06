@@ -18,39 +18,40 @@ export const skillsData = [
   {
     category: "Backend",
     skills: [
-       { name: "Java", icon: "logos:java" },
-    { name: "Spring Boot", icon: "logos:spring-icon" },
-    { name: "Spring Security", icon: "logos:spring" },
-    { name: "JWT", icon: "material-symbols:token" },
-    { name: "Node.js", icon: "logos:nodejs-icon" },
-    { name: "REST APIs", icon: "lucide:cloud-cog" },
-    { name: "MySQL", icon: "logos:mysql-icon" },
-    { name: "SQL", icon: "ph:file-sql" },
- { name: "Microservices", icon: "carbon:microservices-1" },    ],
+      { name: "Java", icon: "logos:java" },
+      { name: "Spring Boot", icon: "logos:spring-icon" },
+      { name: "Spring Security", icon: "logos:spring" },
+      { name: "JWT", icon: "material-symbols:token" },
+      { name: "Node.js", icon: "logos:nodejs-icon" },
+      { name: "REST APIs", icon: "lucide:cloud-cog" },
+      { name: "MySQL", icon: "logos:mysql-icon" },
+      { name: "SQL", icon: "ph:file-sql" },
+      { name: "Microservices", icon: "carbon:microservices-1" },
+    ],
   },
   {
     category: "Frontend",
     skills: [
-     { name: "React.js", icon: "logos:react" },
-  { name: "JavaScript", icon: "logos:javascript" },
-  { name: "HTML5", icon: "logos:html-5" },
-  { name: "CSS3", icon: "logos:css-3" },
-  { name: "Bootstrap", icon: "logos:bootstrap" },
-  { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
-  { name: "Single Page Applications", icon: "material-symbols:web" },
-  { name: "Responsive Design", icon: "material-symbols:responsive-layout" }
+      { name: "React.js", icon: "logos:react" },
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "HTML5", icon: "logos:html-5" },
+      { name: "CSS3", icon: "logos:css-3" },
+      { name: "Bootstrap", icon: "logos:bootstrap" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+      { name: "Single Page Applications", icon: "material-symbols:web" },
+      { name: "Responsive Design", icon: "material-symbols:responsive-layout" },
     ],
   },
   {
-  category: "Databases",
-  skills: [
-    { name: "MySQL", icon: "logos:mysql-icon" },
-    { name: "SQL", icon: "ph:file-sql" },
-    { name: "MongoDB", icon: "logos:mongodb-icon" },
-    // { name: "PostgreSQL", icon: "logos:postgresql" },
-    // { name: "Redis", icon: "logos:redis" }
-  ],
-},
+    category: "Databases",
+    skills: [
+      { name: "MySQL", icon: "logos:mysql-icon" },
+      { name: "SQL", icon: "ph:file-sql" },
+      { name: "MongoDB", icon: "logos:mongodb-icon" },
+      // { name: "PostgreSQL", icon: "logos:postgresql" },
+      // { name: "Redis", icon: "logos:redis" }
+    ],
+  },
   {
     category: "Practices",
     skills: [
@@ -71,30 +72,34 @@ export const skillsData = [
   {
     category: "Tools",
     skills: [
-        { name: "VS Code", icon: "logos:visual-studio-code" },
-    { name: "IntelliJ IDEA", icon: "logos:intellij-idea" },
-    { name: "Eclipse", icon: "logos:eclipse-icon" },
-    
-    { name: "GitHub", icon: "logos:github-icon" },
-    { name: "Git", icon: "logos:git-icon" },
+      { name: "VS Code", icon: "logos:visual-studio-code" },
+      { name: "IntelliJ IDEA", icon: "logos:intellij-idea" },
+      { name: "Eclipse", icon: "logos:eclipse-icon" },
 
-    { name: "Netlify", icon: "logos:netlify" },
-    { name: "Postman", icon: "logos:postman-icon" },
+      { name: "GitHub", icon: "logos:github-icon" },
+      { name: "Git", icon: "logos:git-icon" },
 
-    // Java full-stack relevant tools
-    // { name: "Maven", icon: "logos:maven" },
-    // { name: "Gradle", icon: "logos:gradle" },
-    // { name: "Docker", icon: "logos:docker-icon" },
-    // { name: "Kubernetes", icon: "logos:kubernetes" },
-    // { name: "Jenkins", icon: "logos:jenkins" },
-    // { name: "Figma", icon: "logos:figma" },
+      { name: "Netlify", icon: "logos:netlify" },
+      { name: "Postman", icon: "logos:postman-icon" },
+
+      // Java full-stack relevant tools
+      // { name: "Maven", icon: "logos:maven" },
+      // { name: "Gradle", icon: "logos:gradle" },
+      // { name: "Docker", icon: "logos:docker-icon" },
+      // { name: "Kubernetes", icon: "logos:kubernetes" },
+      // { name: "Jenkins", icon: "logos:jenkins" },
+      // { name: "Figma", icon: "logos:figma" },
     ],
   },
 ] as const;
 
 export const navbarData = [
   { href: "/", icon: HomeIcon, label: "Home" },
-  { href: "https://drive.google.com/file/d/19JxSAGt2f9txytzDEQ31cLZ_r8ZNkApK/view?usp=sharing", icon: NotebookIcon, label: "Resume" },
+  {
+    href: "https://drive.google.com/file/d/19JxSAGt2f9txytzDEQ31cLZ_r8ZNkApK/view?usp=sharing",
+    icon: NotebookIcon,
+    label: "Resume",
+  },
 ] as const;
 
 export const contactData = {
@@ -214,7 +219,6 @@ export const educationData = [
     ],
   },
 ] as const;
-
 
 export const projectsData = [
   {

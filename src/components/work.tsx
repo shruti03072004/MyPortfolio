@@ -9,8 +9,8 @@ interface WorkProps {
 }
 
 export function Work({ delay = 0 }: WorkProps) {
-   return null;
-   //(
+  return null;
+  //(
   //   <section id="work">
   //     <div className="flex min-h-0 flex-col gap-y-3">
   //       <BlurFade delay={delay}>
