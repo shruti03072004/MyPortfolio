@@ -26,6 +26,11 @@ interface Props {
   className?: string;
   onClick?: () => void;
 }
+const stopPropagation = (
+  e: React.MouseEvent<HTMLElement>
+) => {
+  e.stopPropagation();
+};
 
 const Button = ({
   children,
@@ -174,9 +179,9 @@ export function ProjectCard({
                   variant="default"
                   size="sm"
                   className="text-sm font-semibold"
-onClick={(e: React.MouseEvent) => {
-  e.stopPropagation();
-}}
+onClick={stopPropagation}
+
+
                 >
                   <a href={link} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 w-4 h-4" /> View Live
