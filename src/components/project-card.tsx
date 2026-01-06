@@ -174,7 +174,9 @@ export function ProjectCard({
                   variant="default"
                   size="sm"
                   className="text-sm font-semibold"
-                  onClick={(e) => e.stopPropagation()}
+onClick={(e: React.MouseEvent) => {
+  e.stopPropagation();
+}}
                 >
                   <a href={link} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 w-4 h-4" /> View Live
