@@ -2,7 +2,13 @@
 
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Youtube, ArrowUpRight, Globe } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Youtube,
+  ArrowUpRight,
+  Globe,
+} from "lucide-react";
 
 interface Props {
   title: string;
@@ -21,23 +27,39 @@ interface Props {
   onClick?: () => void;
 }
 
-const Button = ({ children, variant = "default", size = "sm", onClick, asChild, className = "" }: any) => {
-  const baseClasses = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
-  const variantClasses = variant === "outline" 
-    ? "border-2 border-gray-700 bg-transparent hover:bg-gray-800 hover:text-white dark:border-gray-400 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300" 
-    : "bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 shadow-lg hover:shadow-xl dark:from-blue-500 dark:to-cyan-500";
+const Button = ({
+  children,
+  variant = "default",
+  size = "sm",
+  onClick,
+  asChild,
+  className = "",
+}: any) => {
+  const baseClasses =
+    "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  const variantClasses =
+    variant === "outline"
+      ? "border-2 border-gray-700 bg-transparent hover:bg-gray-800 hover:text-white dark:border-gray-400 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+      : "bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 shadow-lg hover:shadow-xl dark:from-blue-500 dark:to-cyan-500";
   const sizeClasses = size === "sm" ? "h-9 px-4 text-sm" : "h-11 px-6";
-  
+
   if (asChild && children?.type === "a") {
     return (
-      <a {...children.props} className={`${baseClasses} ${variantClasses} ${sizeClasses} ${className}`} onClick={onClick}>
+      <a
+        {...children.props}
+        className={`${baseClasses} ${variantClasses} ${sizeClasses} ${className}`}
+        onClick={onClick}
+      >
         {children.props.children}
       </a>
     );
   }
-  
+
   return (
-    <button className={`${baseClasses} ${variantClasses} ${sizeClasses} ${className}`} onClick={onClick}>
+    <button
+      className={`${baseClasses} ${variantClasses} ${sizeClasses} ${className}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -70,8 +92,8 @@ export function ProjectCard({
   };
 
   return (
-    <motion.div 
-      ref={ref} 
+    <motion.div
+      ref={ref}
       className="group mb-6 sm:mb-8 last:mb-0"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -83,7 +105,7 @@ export function ProjectCard({
       >
         {/* Gradient Overlay Effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-        
+
         <div className="flex flex-col lg:flex-row">
           {/* Image/Video Section */}
           <div className="relative w-full lg:w-[45%] lg:order-2 overflow-hidden">
@@ -98,9 +120,14 @@ export function ProjectCard({
                   src={image}
                   alt={title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  onError={(e) => {
-                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23334155" width="800" height="600"/%3E%3Ctext fill="%2394a3b8" font-family="sans-serif" font-size="32" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3E' + title + '%3C/text%3E%3C/svg%3E';
-                  }}
+                onError={(e) => {
+  const img = e.currentTarget as HTMLImageElement;
+  img.src =
+    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23334155" width="800" height="600"/%3E%3Ctext fill="%2394a3b8" font-family="sans-serif" font-size="32" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3E' +
+    title +
+    '%3C/text%3E%3C/svg%3E';
+}}
+
                 />
                 {/* Gradient Overlay on Image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -214,7 +241,8 @@ export function ProjectCard({
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <ExternalLink className="mr-2 w-4 h-4" /> {linkItem.type}
+                          <ExternalLink className="mr-2 w-4 h-4" />{" "}
+                          {linkItem.type}
                         </a>
                       </Button>
                     );
@@ -246,7 +274,7 @@ export default function Demo() {
             Full-stack applications showcasing modern web development
           </p>
         </div>
-        
+
         <ProjectCard
           title="RideBee - Car Rental System"
           description="A full-stack car rental platform with Angular and Spring Boot, enabling customers to browse cars, search listings, and book rentals with separate admin and customer dashboards secured by JWT authentication."
@@ -254,12 +282,20 @@ export default function Demo() {
           link="https://github.com/shruti03072004/Ridebee.git"
           image="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop"
           links={[
-            { icon: null, type: "GitHub", href: "https://github.com/shruti03072004/Ridebee.git" },
-            { icon: null, type: "Demo", href: "https://github.com/shruti03072004/Ridebee.git" }
+            {
+              icon: null,
+              type: "GitHub",
+              href: "https://github.com/shruti03072004/Ridebee.git",
+            },
+            {
+              icon: null,
+              type: "Demo",
+              href: "https://github.com/shruti03072004/Ridebee.git",
+            },
           ]}
           onClick={() => alert("Open project details modal")}
         />
-        
+
         <ProjectCard
           title="Infinite StudioX - Agency Website"
           description="A modern agency website featuring multiple sections including Home, About, Services, Projects, Pricing, Team, Contact, and a Demo Booking form with Formspree integration for real-time email delivery."
@@ -267,8 +303,16 @@ export default function Demo() {
           link="https://infinite-studiox.vercel.app/"
           image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
           links={[
-            { icon: null, type: "GitHub", href: "https://github.com/shruti03072004/Agency-website-.git" },
-            { icon: null, type: "Demo", href: "https://infinite-studiox.vercel.app/" }
+            {
+              icon: null,
+              type: "GitHub",
+              href: "https://github.com/shruti03072004/Agency-website-.git",
+            },
+            {
+              icon: null,
+              type: "Demo",
+              href: "https://infinite-studiox.vercel.app/",
+            },
           ]}
           onClick={() => alert("Open project details modal")}
         />
@@ -280,8 +324,16 @@ export default function Demo() {
           link="https://climatepilot.netlify.app/"
           video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
           links={[
-            { icon: null, type: "GitHub", href: "https://github.com/shruti03072004/ClimatePilot-Weather-Project.git" },
-            { icon: null, type: "Demo", href: "https://climatepilot.netlify.app/" }
+            {
+              icon: null,
+              type: "GitHub",
+              href: "https://github.com/shruti03072004/ClimatePilot-Weather-Project.git",
+            },
+            {
+              icon: null,
+              type: "Demo",
+              href: "https://climatepilot.netlify.app/",
+            },
           ]}
           onClick={() => alert("Open project details modal")}
         />
