@@ -5,13 +5,13 @@ export const personalData = {
   name: "Shruti Dakhode",
   initials: "SD",
   url: "https://www.benrogers.dev/",
-  location: "Brisbane, Australia",
-  locationLink: "https://www.google.com/maps/place/brisbane",
+  location: "Pune,maharashtra,India",
+  locationLink: "https://maps.app.goo.gl/Pn4JSe9sAWKRtsiw5",
   description:
     "Java Full-Stack Developer. I build high-performance web applications with Spring Boot, React, and clean, scalable architectures.",
   summary:
     "**My journey started in India**, where my fascination with technology began early. While pursuing my degree in **Electronics & Communication** Engineering, I discovered the world of **software**—and it quickly became my **passion**.Since then, I’ve built **full-stack applications** using **Java, Spring Boot, React, and modern UI frameworks**. Projects like **Infinite StudioX and ClimatePilot** helped me sharpen my skills in **architecture, performance optimization**, and real-world **problem solving**. I’m driven by **clarity, creativity**, and the desire to build **solutions** that genuinely make an impact.",
-  avatarUrl: "/me.png",
+  avatarUrl: "/shraaprofile.jpeg",
 } as const;
 
 export const skillsData = [
